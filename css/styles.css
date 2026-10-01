@@ -15,6 +15,24 @@
   font-size: 18px;
 }
 
+h1 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 5vw;
+}
+
+h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1.5vw;
+    font-weight: 300;
+}
+
+p {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+}
+
+
 body {
   margin: 0;
 }
@@ -25,7 +43,6 @@ body {
 
 nav {
     height: 70px;
-    position: fixed;
     width: 100%;
     display: flex;
     background-color: var(--background-color);
@@ -38,9 +55,9 @@ nav {
 
 .logo {
     width: 85px;
-
-
 }
+
+
 
 .nav-links {
     list-style: none;
@@ -72,6 +89,41 @@ nav {
   font-size: 1.8rem;
   color: var(--ligt-text);
 }
+
+/* ENTRADAS  */
+
+    .entradas > .entradas-texto {
+        display: flex;
+        flex-direction: column;
+        width: calc(50vw - 80px);
+        gap: 20px;
+        margin-top: 5rem;
+    
+    }
+
+    .entradas > .entradas-foto > .entradas {
+        width: 100vh;
+    }
+
+    .entradas {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        background-color: #000000;
+        color: white;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .container {
+        background-color: #000000;
+    }
+
+    
+
+
+
+    
 
 
 /* Media query */
