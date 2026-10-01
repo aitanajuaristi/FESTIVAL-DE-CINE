@@ -1,11 +1,11 @@
 const hamb = document.querySelector(".hamb");
-const navLinks = document.querySelector(".nav-links")
+const navLinks = document.querySelector(".nav-links");
+const icon = hamb.querySelector("i");
 
-hamb.addEventListener("click", function() {
-    // alert("HOLA NOS QUEREMOS IR")
-    console.log("Con esto podemos mandar mensajitos a la consola");
+hamb.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
 
-    navLinks.classList.toggle("active");
-
-    
-}) 
+  // Cambia entre hamburguesa y X
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-xmark");
+});
