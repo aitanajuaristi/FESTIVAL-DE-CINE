@@ -1,0 +1,18 @@
+:root {
+  --color-primary: #1B3E66;
+  --background-color: white;
+  --color-text: #000000;
+  --margin-body: 0 40px 30px 40px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  background-color: aqua;
+}
+
+body {
+  margin: 0;
+}
