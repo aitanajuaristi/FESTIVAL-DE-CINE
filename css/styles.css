@@ -5,6 +5,7 @@
   --background-color: white;
   --color-text: #000000;
   --margin-body: 0 40px 30px 40px;
+  --transition-value: left 0.3s ease;
   
 }
 
@@ -64,24 +65,29 @@ nav {
     /* opacity: 0; */
 }
 
+.hamb i {
+  font-size: 1.8rem;
+  color: var(--ligt-text);
+}
+
 
 /* Media query */
 
 @media (max-width: 960px) {
 
-    #hero {
+    /* #hero {
         background-color: aqua;
-    }
+    } */
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 100px;
         width: 100%;
         height: calc(100vh - 70px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: var(--pr-color);
+        background-color: var(--background-color);
         transition: var(--transition-value);
         left: -100%;
     }
