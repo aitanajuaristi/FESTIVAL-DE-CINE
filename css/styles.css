@@ -12,7 +12,6 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
   font-size: 18px;
 }
 
@@ -21,6 +20,8 @@ body {
 }
 
 /* NAV */
+
+
 
 nav {
     height: 70px;
@@ -31,6 +32,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
 }
 
 .logo {
