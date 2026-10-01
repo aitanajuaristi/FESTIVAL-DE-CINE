@@ -1,10 +1,11 @@
 :root {
-  /* --color-primary: #1B3E66; */
+
     --pr-color: #1B3E66;
+    --ligt-text: rgb(32, 33, 34);
   --background-color: white;
   --color-text: #000000;
   --margin-body: 0 40px 30px 40px;
-   --transition-value: all 0.3s ease;
+  
 }
 
 * {
@@ -25,6 +26,7 @@ nav {
     position: fixed;
     width: 100%;
     display: flex;
+    background-color: var(--background-color);
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2rem;
@@ -50,7 +52,6 @@ nav {
     color: var(--ligt-text);
     text-decoration: none;
     font-size: 1.2rem;
-    transition: var(--transition-value);
 }
 
 .nav-links > li > a:hover {
@@ -61,4 +62,43 @@ nav {
     cursor: pointer;
     display: none;
     /* opacity: 0; */
+}
+
+
+/* Media query */
+
+@media (max-width: 960px) {
+
+    #hero {
+        background-color: aqua;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        width: 100%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--pr-color);
+        transition: var(--transition-value);
+        left: -100%;
+    }
+
+ /* este selctor esta esperando a que yo con js se lo ponga al ul  */
+    .nav-links.active {
+        left: 0;
+        
+
+    }
+
+    .nav-links > li {
+        margin: 1.5rem 0;
+
+    }
+
+    .hamb {
+        display: block;
+    }
 }
