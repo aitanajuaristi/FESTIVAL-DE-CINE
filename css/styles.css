@@ -1,8 +1,10 @@
 :root {
-  --color-primary: #1B3E66;
+  /* --color-primary: #1B3E66; */
+    --pr-color: #1B3E66;
   --background-color: white;
   --color-text: #000000;
   --margin-body: 0 40px 30px 40px;
+   --transition-value: all 0.3s ease;
 }
 
 * {
@@ -16,3 +18,47 @@ body {
   margin: 0;
 }
 
+/* NAV */
+
+nav {
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.logo {
+    width: 85px;
+
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+
+}
+
+.nav-links > li {
+    margin-left: 2rem;
+}
+
+.nav-links > li > a {
+    color: var(--ligt-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transition-value);
+}
+
+.nav-links > li > a:hover {
+    text-decoration: underline;
+}
+
+.hamb {
+    cursor: pointer;
+    display: none;
+    /* opacity: 0; */
+}
