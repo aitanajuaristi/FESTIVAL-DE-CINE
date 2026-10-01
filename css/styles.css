@@ -73,6 +73,25 @@ nav {
   color: var(--ligt-text);
 }
 
+/* MOVIES */
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;           
+    justify-content: center;   
+    gap: 1.5rem;
+    max-width: 1200px;         
+    margin: 0 auto;           
+    padding: 100px 2rem 2rem;  
+}
+
+.movies img {
+    width: 220px;             
+    height: auto;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
 
 /* Media query */
 
