@@ -57,7 +57,49 @@
        <div class="entradas-foto">
          <img class="entradas" src="img/entradas .png">
         </div>
+
+
       </section>
+      <section class="formulario">
+        <form onsubmit="return comprar()">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" placeholder="Escribe tu correo" required>
+                <label for="exposicion">Exposición:</label>
+               
+                <select id="exposicion" onchange="costeTotal()">
+                    <option value="e1">Entrada General - 80 €</option>
+                    <option value="e2">Entrada Front row - 110 €</option>
+                    <option value="e3">Entrada Vip - 150 €</option>
+                </select>
+                <label for="numero">Número de entradas:</label>
+                
+                <input type="number" id="numero" min="1" max="10" placeholder="Número de entradas" required onchange="costeTotal()">
+                <p>Coste total: <span id="coste"></span></p>
+                <input type="submit" value="Comprar entradas">
+        </form>
+        <div id="modal">
+            <div>
+                <h2>La compra se ha realizado correctamente</h2>
+                <ul>
+                    <li>Nombre: <span id="nom"></span></li>
+                    <li>Correo electrónico: <span id="corr"></span></li>
+                    <li>Tipo de entrada: <span id="ex"></span></li>
+                    <li>Número de entradas: <span id="num"></span></li>
+                    <li>Coste total: <span id="ct"></span></li>
+                </ul>
+                <button onclick="cerrarVentana()">Aceptar</button>
+            </div>
+        </div>
+
+
+
+
+      </section>
+
+
+
 
     
     <script src="js/script.js"></script>
