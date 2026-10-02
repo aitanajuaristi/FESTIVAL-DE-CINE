@@ -23,9 +23,9 @@ function costeTotal() {
     if (valorExposicion === "e1") {
         costePorEntrada = 80;
     } else if (valorExposicion === "e2") {
-        costePorEntrada = 110;
+        costePorEntrada = 180;
     } else {
-        costePorEntrada = 150;
+        costePorEntrada = 120;
     }
     console.log("coste por entrada = " + costePorEntrada);
     let costeEntradas = (numeroEntradas * costePorEntrada) + " €";
@@ -46,9 +46,9 @@ function comprar() {
     if (valorExposicion === "e1") {
         nombreExposicion = "Entrada General - 80 €";
     } else if (valorExposicion === "e2") {
-        nombreExposicion = " Entrada Front row - 110 €";
+        nombreExposicion = " VIP - 180 €";
     } else {
-        nombreExposicion = "Entrada Vip - 150 €";
+        nombreExposicion = "Abono festival - 120 €";
     }
     document.getElementById("ex").innerHTML = nombreExposicion;
 

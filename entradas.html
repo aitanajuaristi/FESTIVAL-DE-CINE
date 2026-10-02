@@ -50,6 +50,7 @@
         <div class="entradas-texto">
           <h2>SSIFF</h2>
           <h1>ELIGE TU ENTRADA</h1>
+          <hr>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.  Exercitationem  animi commodi eum neque illum fuga quae et  esse at dolor labore alias   omnis nemo deserunt eaque maxime,   unde laborum porro.
          </p>
@@ -62,26 +63,39 @@
       </section>
       <section class="formulario">
         <form onsubmit="return comprar()">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" id="correo" placeholder="Escribe tu correo" required>
-                <label for="exposicion">Exposición:</label>
-               
-                <select id="exposicion" onchange="costeTotal()">
-                    <option value="e1">Entrada General - 80 €</option>
-                    <option value="e2">Entrada Front row - 110 €</option>
-                    <option value="e3">Entrada Vip - 150 €</option>
-                </select>
-                <label for="numero">Número de entradas:</label>
-                
-                <input type="number" id="numero" min="1" max="10" placeholder="Número de entradas" required onchange="costeTotal()">
-                <p>Coste total: <span id="coste"></span></p>
-                <input type="submit" value="Comprar entradas">
+          <div class="campos">
+            <!-- Columna izquierda -->
+            <div class="columna">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" placeholder="Nombre" required>
+
+              <label for="correo">Correo electrónico:</label>
+              <input type="email" id="correo" placeholder="Correo electrónico" required>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="columna">
+              <label for="exposicion">Exposición:</label>
+              <select id="exposicion" onchange="costeTotal()">
+                <option value="e1">Entrada General - 80 €</option>
+                <option value="e2">VIP - 180 €</option>
+                <option value="e3">Abono festival - 120 €</option>
+              </select>
+
+              <label for="numero">Número de entradas:</label>
+              <input type="number" id="numero" min="1" max="10" placeholder="Número de entradas" required onchange="costeTotal()">
+            </div>
+          </div>
+
+            <!-- Parte inferior, centrada -->
+            <div class="pie">
+              <p>Coste total: <span id="coste"></span></p>
+              <input type="submit" value="Comprar entradas">
+            </div>
         </form>
         <div id="modal">
             <div>
-                <h2>La compra se ha realizado correctamente</h2>
+                <h2>LA COMPRA SE HA REALIZADO CORRECTAMENTE!</h2>
                 <ul>
                     <li>Nombre: <span id="nom"></span></li>
                     <li>Correo electrónico: <span id="corr"></span></li>
