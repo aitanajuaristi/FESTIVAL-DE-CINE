@@ -25,18 +25,17 @@
 </head>
 
     
-<div class="container">
+
   <body>
-    <header>
-          <!-- Menu de navegacion -->
-        <nav>
+      <!-- Menu de navegacion -->
+      <nav>
         <a href="index.html"><img class="logo" src="img/logo.png" alt="logo"></a>
         <ul class="nav-links">
-            <li><a href="peliculas.html">PELÍCULAS</a></li>
-            <li><a href="entradas.html">ENTRADAS</a></li>
+          <li><a href="peliculas.html">PELÍCULAS</a></li>
+          <li><a href="entradas.html">ENTRADAS</a></li>
 
-            <!-- PREGUNTAR A ADRIAN -->
-            <li><a href="#">CINES</a></li>
+          <!-- PREGUNTAR A ADRIAN -->
+          <li><a href="#">CINES</a></li>
         </ul>
 
         <div class="hamb">
@@ -44,14 +43,102 @@
             <!-- <div class="hamb">MENÚ</div> -->
         </div>
        
-
-        </nav>
+      </nav>
       
-     </header>
     
+      <section class="entradas">
+        <div class="entradas-texto">
+          <h2>SSIFF</h2>
+          <h1>ELIGE TU ENTRADA</h1>
+          <hr>
+          <p>
+            Elige tu entrada y vive el Festival de San Sebastián. Las entradas son limitadas y están sujetas a disponibilidad, por lo que algunas modalidades pueden agotarse.
+         </p>
+       </div>
+        <div class="entradas-foto">
+          <img class="carnets" src="img/entradas.png">
+        </div>
+
+
+      </section>
+      <section class="formulario">
+        <form onsubmit="return comprar()">
+          <div class="campos">
+            <!-- Columna izquierda -->
+            <div class="columna">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" placeholder="Nombre" required>
+
+              <label for="correo">Correo electrónico:</label>
+              <input type="email" id="correo" placeholder="Correo electrónico" required>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="columna">
+              <label for="exposicion">Exposición:</label>
+              <select id="exposicion" onchange="costeTotal()">
+                <option value="e1">Entrada General - 80 €</option>
+                <option value="e2">VIP - 180 €</option>
+                <option value="e3">Abono festival - 120 €</option>
+              </select>
+
+              <label for="numero">Número de entradas:</label>
+              <input type="number" id="numero" min="1" max="10" placeholder="Número de entradas" required onchange="costeTotal()">
+            </div>
+          </div>
+
+            <!-- Parte inferior, centrada -->
+            <div class="pie">
+              <p>Coste total: <span id="coste"></span></p>
+              <input type="submit" value="Comprar entradas">
+            </div>
+        </form>
+        <div id="modal">
+            <div>
+                <h2>LA COMPRA SE HA REALIZADO CORRECTAMENTE</h2>
+                <ul>
+                    <li>Nombre: <span id="nom"></span></li>
+                    <li>Correo electrónico: <span id="corr"></span></li>
+                    <li>Tipo de entrada: <span id="ex"></span></li>
+                    <li>Número de entradas: <span id="num"></span></li>
+                    <li>Coste total: <span id="ct"></span></li>
+                </ul>
+                <button onclick="cerrarVentana()">Aceptar</button>
+            </div>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-container">
+          <div class="terms">
+           <h3>Términos y política</H3>
+            <div>
+              <p>Términos y condiciones de Uso</p>
+              <p>Proceso de Compra</p>
+              <p>Aviso Legal</p>
+            </div>
+          </div>
+          <div class="contact-info">
+            <H3>Información de contacto</H3>
+            <div>
+              <p>TABAKALERA</p>
+              <p>Plaza de las Cigarreras, 1, 2ª planta</p>
+              <p>20012 DONOSTIA - SAN SEBASTIÁN</p>
+            </div>
+          </div>
+          <div class="horario">
+            <H3>Horario de atención al público</H3>
+            <div>
+              <p>Horario continuado durante el Festival:</p>
+              <p>de Lunes a domingo de 09:00 a 14:00h</p>
+              <p>y de 16:00 a 20:00h</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
     <script src="js/script.js"></script>
     
   
   </body>
-</div>
+
 </html>
