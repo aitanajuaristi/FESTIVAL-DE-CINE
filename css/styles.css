@@ -90,6 +90,70 @@ nav {
 
 /* PELICULAS */
 
+.section__title {
+  text-align: left;
+  color: white;
+  font-size: 2rem;
+  padding: 3rem 2rem 2rem;
+  width: min-content;   
+}
+
+.section__title::after {
+  content: "";
+  display: block;       
+  width: 80px;           
+  height: 3px;          
+  background-color: white;
+  margin-top: 1rem;      
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;          
+  padding: 0 2rem 4rem;
+}
+
+.gallery__item {
+  width: 250px;
+  color: white;
+  text-align: center;
+}
+
+.gallery__img {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.gallery__item:hover .gallery__img img {
+  transform: scale(1.1);
+}
+
+.gallery__item figcaption {
+  margin-top: 0.8rem;
+}
+
+.gallery__item h2 {
+  font-size: 1rem;         
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.gallery__item p {
+  font-size: 0.85rem;
+}
+
 
 
 /* ENTRADAS  */
