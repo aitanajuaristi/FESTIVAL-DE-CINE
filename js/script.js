@@ -12,6 +12,17 @@ hamb.addEventListener("click", () => {
   icon.classList.toggle("fa-xmark");
 });
 
+// Cierra el menú al pulsar un enlace
+const enlaces = navLinks.querySelectorAll("a");
+
+enlaces.forEach((enlace) => {
+  enlace.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    icon.classList.add("fa-bars");
+    icon.classList.remove("fa-xmark");
+  });
+});
+
 
 
 // Formulario 
