@@ -638,17 +638,19 @@ footer {
 
   /* NAV  */
 
+
     .nav-links {
         position: fixed;
         top: 100px;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 100px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         background-color: var(--background-color);
-        transition: var(--transition-value);
+        transition: 0.5s;
         left: -100%;
+        z-index: 10;
     }
 
  /* este selctor esta esperando a que yo con js se lo ponga al ul  */
@@ -666,6 +668,61 @@ footer {
     .hamb {
         display: block;
     }
+
+        /* VIDEO PORTADA */
+
+    .video {
+        height: 50vh;
+    }
+
+    .video-texto {
+        padding: 24px;
+    }
+
+    .video-texto > h1 {
+        font-size: 7vw;
+    }
+
+    /* FESTIVAL 74 */
+
+    .Festival74 {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 40px;
+    }
+
+    .Festival74-texto {
+        width: 100%;
+    }
+
+    .Festival74-texto > h1 {
+        text-align: center;
+    }
+
+    .Festival74-carrousel {
+        width: 100%;
+        height: 400px;
+    }
+
+    .Festival74 .Festival74-texto > div > ul {
+      justify-content: center;
+    }
+
+    /* CINES */
+
+    .Cines-imagen {
+        display: none;
+    }
+
+    .Cines-lista {
+        width: 100%;
+    }
+
+    .Cines-titulo {
+        font-size: 6vw;
+        max-width: 70%;
+    }
+
 
   /* ENTRADAS */
 
@@ -703,7 +760,58 @@ footer {
 /* MEDIA QUERY MOVIL */
 @media (max-width: 600px) {
 
-    /* ENTRADAS */
+  /* FESTIVAL 74 */
+
+    .Festival74 .Festival74-texto > div > ul {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .Festival74 .Festival74-texto > div > ul > li > img {
+        width: 22vw;
+    }
+
+    /* PELICULAS DESTACADAS */
+
+    .Destacadas {
+        margin: 40px 20px;
+    }
+
+     .Destacadas-cabecera {
+        display: flex;
+        gap: 12px;
+    }
+
+     .Destacadas-boton {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+
+    .Destacadas-titulo {
+        font-size: 7vw;
+    }
+
+    .Destacadas-lista {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .Destacadas-peli {
+        width: 100%;
+    }
+  
+    /* GALA */
+
+    .Gala {
+        margin: 40px 20px;
+    }
+
+    .Gala > iframe {
+        aspect-ratio: 4 / 3;
+    }
+  
+  
+  /* ENTRADAS */
 
     .entradas {
         padding: 0 1.5rem;
@@ -731,6 +839,7 @@ footer {
         max-width: 100%;
         font-size: 0.9rem;
     }
+
 
     /* FORMULARIO */
 
