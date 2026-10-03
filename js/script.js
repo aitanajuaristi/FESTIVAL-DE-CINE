@@ -1,3 +1,5 @@
+
+// NAV 
 const hamb = document.querySelector(".hamb");
 const navLinks = document.querySelector(".nav-links");
 const icon = hamb.querySelector("i");
@@ -8,6 +10,17 @@ hamb.addEventListener("click", () => {
   // Cambia entre hamburguesa y X
   icon.classList.toggle("fa-bars");
   icon.classList.toggle("fa-xmark");
+});
+
+// Cierra el menú al pulsar un enlace
+const enlaces = navLinks.querySelectorAll("a");
+
+enlaces.forEach((enlace) => {
+  enlace.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    icon.classList.add("fa-bars");
+    icon.classList.remove("fa-xmark");
+  });
 });
 
 
