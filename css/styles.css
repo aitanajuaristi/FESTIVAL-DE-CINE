@@ -30,8 +30,8 @@ h2 {
 }
 
 p {
-    font-family: var(--light-text);
-    font-size: 15px;
+    font-family: var(--fuente-texto);
+    font-size: 1rem
 }
 
 
@@ -86,6 +86,300 @@ nav {
 .hamb i {
   font-size: 1.8rem;
   color: var(--light-text);
+}
+
+
+/* INDEX VIDEO ENTRADA  */
+.video {
+  padding: 0;
+  margin: 0px 40px 40px 40px;
+  width: calc(100vw - 80px);
+}
+.video > video {
+  width: calc(100vw - 80px);
+  height: auto;
+}
+
+/* SECCION 74 FESTIVAL  */
+
+  .Festival74 {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 2rem 40px 2rem 40px;
+}
+ 
+.Festival74-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: calc(50vw - 80px);
+  gap: 20px;
+}
+.Festival74-texto > h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 5vw;
+  min-font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.Festival74 >  .Festival74-texto > div > ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 0;
+  gap: 30px;
+  list-style: none;
+}
+
+div > ul > li > img {
+  width: 8vw;
+  height: auto;
+}
+
+.Festival74-carrousel {
+  width: calc(50vw - 80px);
+  height: 500px;
+  overflow: hidden;
+  background-color: black;
+}
+
+.Festival74-carrousel-window {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.Festival74-carrousel-track {
+  position: relative;
+  display: flex;
+  width: 700%;
+  height: 100%;
+  animation: 28s slider74 infinite;
+}
+
+.Festival74-carrousel-track > figure {
+  width: 100%;
+  flex: 0 0 14.2857%;
+  height: 100%;
+  position: relative;
+}
+
+.Festival74-carrousel-track > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.Festival74-carrousel-track > figure > figcaption {
+  width: 100%;
+  height: 6em;
+  position: absolute;
+  bottom: 0;
+  padding-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.Festival74-carrousel-track > figure > figcaption > h2 {
+  font-size: 1.4rem;
+}
+
+.Festival74-carrousel-track > figure > figcaption > p {
+  font-size: 1rem;
+}
+
+@keyframes slider74 {
+  0%, 11.43%     { left: 0; }
+  14.29%, 25.71% { left: -100%; }
+  28.57%, 40%    { left: -200%; }
+  42.86%, 54.29% { left: -300%; }
+  57.14%, 68.57% { left: -400%; }
+  71.43%, 82.86% { left: -500%; }
+  85.71%, 97.14% { left: -600%; }
+  100%           { left: 0; }
+}
+/* SECCION PELICULAS DESTACADAS */
+.Destacadas {
+  margin: 60px 40px;
+}
+
+.Destacadas-titulo {
+  color: #111;
+  text-align: left;
+  margin-bottom: 24px;
+  font-size: 3vw;
+}
+
+.Destacadas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.Destacadas-grid > a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Destacadas-grid > a:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.Destacadas-grid > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.Destacadas-grid > a > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.Destacadas-grid > a:hover > span {
+  opacity: 1;
+}
+
+/* mi media query  */
+@media (max-width: 768px) {
+  .Destacadas {
+    margin: 40px 20px;
+  }
+
+  .Destacadas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Destacadas-titulo {
+    font-size: 1.5rem;
+  }
+}
+
+/* SECCION GALA VIDEO */
+.Gala {
+  margin: 80px 40px 20px 40px;
+}
+
+.Gala > iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+/* SECCION CINES */
+html {
+  scroll-behavior: smooth;
+}
+
+.Cines {
+  background-color: black;
+  color: white;
+  padding: 3rem 40px;
+  margin-top: 60px;
+  scroll-margin-top: 80px;
+}
+
+.Cines-titulo {
+  font-size: 4vw;
+  max-width: 60%;
+  margin-bottom: 40px;
+}
+
+.Cines-contenido {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
+.Cines-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.Cines-lista hr {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: none;
+  border-top: 1px solid white;
+}
+
+.Cines-lista > li > a {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 0;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.Cines-nombre {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.Cines-num {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 2rem;
+  min-width: 60px;
+}
+
+.Cines-icono {
+  margin-left: auto;
+  font-size: 1.5rem;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.Cines-lista > li > a:hover {
+  color: #aaa;
+  padding-left: 12px;
+}
+
+.Cines-lista > li > a:hover .Cines-icono {
+  transform: rotate(45deg) translate(4px, -4px);
+}
+
+.Cines-imagen > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .Cines-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .Cines-titulo {
+    max-width: 100%;
+    font-size: 8vw;
+  }
 }
 
 /* ENTRADAS  */
