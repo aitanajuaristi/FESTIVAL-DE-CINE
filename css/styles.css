@@ -409,12 +409,20 @@ div > ul > li > img {
 
 /* PELICULAS */
 
+.section--alt {
+  padding-top: 2rem;
+}
+
+.section--alt > .container > h2 {
+  color: white;
+  padding: 2rem 2rem 0 2rem;
+}
+
 .section__title {
   text-align: left;
   color: white;
-  font-size: 2rem;
-  padding: 3rem 2rem 2rem;
-  width: min-content;   
+  padding: 1.5rem 2rem 2rem;
+  width: min-content;
 }
 
 .section__title::after {
