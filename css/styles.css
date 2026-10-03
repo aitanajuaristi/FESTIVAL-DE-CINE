@@ -89,15 +89,42 @@ nav {
 }
 
 
-/* INDEX VIDEO ENTRADA  */
+
+/* INDEX VIDEO ENTRADA */
 .video {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  margin: 0 0 40px 0;
   padding: 0;
-  margin: 0px 40px 40px 40px;
-  width: calc(100vw - 80px);
 }
+
 .video > video {
-  width: calc(100vw - 80px);
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-texto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.video-texto > a {
+  width: fit-content;
+  padding: 12px 24px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 /* SECCION 74 FESTIVAL  */
@@ -212,54 +239,69 @@ div > ul > li > img {
   margin: 60px 40px;
 }
 
+.Destacadas-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
 .Destacadas-titulo {
   color: #111;
-  text-align: left;
-  margin-bottom: 24px;
   font-size: 3vw;
 }
 
-.Destacadas-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.Destacadas-boton {
+  padding: 12px 24px;
+  border: 2px solid #111;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+}
+
+.Destacadas-icono {
+  transform: rotate(45deg);
+}
+
+.Destacadas-boton:hover {
+  background-color: #111;
+  color: white;
+}
+
+.Destacadas-lista {
+  display: flex;
   gap: 12px;
 }
 
-.Destacadas-grid > a {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  aspect-ratio: 2 / 3;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.Destacadas-peli {
+  width: calc(25% - 9px);
+  color: #111;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-.Destacadas-grid > a:hover {
+.Destacadas-peli:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.Destacadas-grid > a > img {
+.Destacadas-peli > img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   display: block;
 }
 
-.Destacadas-grid > a > span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  font-weight: 500;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.Destacadas-peli > h2 {
+  margin-top: 12px;
+  font-size: 1.1rem;
 }
 
-.Destacadas-grid > a:hover > span {
-  opacity: 1;
+.Destacadas-peli > p {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #666;
 }
 
 /* mi media query  */
@@ -335,6 +377,7 @@ div > ul > li > img {
 }
 
 .Cines-nombre {
+  font-family: var(--fuente-mono);
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
