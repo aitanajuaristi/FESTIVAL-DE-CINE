@@ -290,16 +290,12 @@ div > ul > li > img {
 }
 
 /* SECCION CINES */
-html {
-  scroll-behavior: smooth;
-}
 
 .Cines {
   background-color: black;
   color: white;
   padding: 3rem 40px;
   margin-top: 60px;
-  scroll-margin-top: 80px;
 }
 
 .Cines-titulo {
@@ -309,14 +305,14 @@ html {
 }
 
 .Cines-contenido {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Cines-lista {
   list-style: none;
   padding: 0;
+  width: 55%;
 }
 
 .Cines-lista hr {
@@ -326,6 +322,7 @@ html {
   border: none;
   border-top: 1px solid white;
 }
+
 
 .Cines-lista > li > a {
   display: flex;
@@ -365,7 +362,16 @@ html {
   transform: rotate(45deg) translate(4px, -4px);
 }
 
+.Cines-imagen {
+  position: relative;
+  width: 40%;
+  overflow: hidden;
+}
+
 .Cines-imagen > img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
