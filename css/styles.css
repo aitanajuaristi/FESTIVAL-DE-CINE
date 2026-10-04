@@ -35,10 +35,6 @@ p {
 }
 
 
-body {
-  margin: 0;
-}
-
 /* NAV */
 nav {
     height: 70px;
@@ -96,7 +92,6 @@ nav {
   width: 100%;
   height: 85vh;
   margin: 0 0 40px 0;
-  padding: 0;
 }
 
 .video > video {
@@ -146,12 +141,6 @@ nav {
   width: calc(50vw - 80px);
   gap: 20px;
 }
-.Festival74-texto > h1 {
-  font-family: Helvetica, sans-serif;
-  font-size: 5vw;
-  min-font-size: 1.5rem;
-  font-weight: 700;
-}
 
 .Festival74 >  .Festival74-texto > div > ul{
   display: flex;
@@ -163,7 +152,7 @@ nav {
   list-style: none;
 }
 
-div > ul > li > img {
+.Festival74-texto > div > ul > li > img {
   width: 8vw;
   height: auto;
 }
@@ -421,31 +410,23 @@ div > ul > li > img {
 .section__title {
   text-align: left;
   color: white;
-  padding: 1.5rem 2rem 2rem;
+  padding: 1.5rem 2rem 0;
   width: min-content;
 }
-
-.section__title::after {
-  content: "";
-  display: block;       
-  width: 80px;           
-  height: 3px;          
-  background-color: white;
-  margin-top: 1rem;      
+.section--alt > .container > hr {
+  width: 80px;
+  margin: 1rem 0 4rem 2rem;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;          
   padding: 0 2rem 4rem;
 }
 
 .gallery__item {
-  width: 250px;
+  width: calc(20% - 1.6rem);
   color: white;
   text-align: center;
 }
@@ -457,7 +438,8 @@ div > ul > li > img {
 
 .gallery__img img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
   display: block;
   border-radius: 8px;
   transition: transform 0.4s ease;
@@ -648,7 +630,6 @@ hr {
   font-weight: bold;
 }
 
-#modal > div > h1,
 #modal > div > ul > li,
 #modal > div > button {
   margin: 0.5rem 0;
@@ -684,10 +665,6 @@ footer {
   justify-content: space-between;
   gap: 2rem;
   padding: 3rem 2rem;
-}
-
-.footer-container > div {
-  width: auto;
 }
 
 .footer-container h3 {
@@ -827,6 +804,13 @@ footer {
         max-width: 80%;
     }
 
+    
+    /* PELICULAS */
+
+    .gallery__item {
+        width: calc(50% - 1rem);
+    }
+
 
 
 
@@ -884,6 +868,26 @@ footer {
 
     .Gala > iframe {
         aspect-ratio: 4 / 3;
+    }
+
+    /* PELICULAS */
+
+    .section--alt > .container > h2 {
+        font-size: 1rem;
+        padding: 3rem 1.5rem 0 1.5rem;
+    }
+
+    .section__title {
+        font-size: 9vw;
+        padding: 1rem 1.5rem 1.5rem;
+    }
+
+    .gallery {
+        padding: 0 1.5rem 3rem;
+    }
+
+    .gallery__item {
+        width: 100%;
     }
   
   
