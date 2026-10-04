@@ -37,46 +37,45 @@ p {
 
 /* NAV */
 nav {
-    height: 70px;
-    width: 100%;
-    display: flex;
-    background-color: var(--background-color);
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 2rem;
-    font-family: var(--fuente-mono);
-    font-weight: bold;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  background-color: var(--background-color);
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  font-family: var(--fuente-mono);
+  font-weight: bold;
 }
 
 .logo {
-    width: 85px;
+  width: 85px;
 }
 
 
-
 .nav-links {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 
 }
 
 .nav-links > li {
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .nav-links > li > a {
-    color: var(--light-text);
-    text-decoration: none;
-    font-size: 1.2rem;
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .nav-links > li > a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .hamb {
-    cursor: pointer;
-    display: none;
+  cursor: pointer;
+  display: none;
 }
 
 .hamb i {
@@ -124,7 +123,7 @@ nav {
 
 /* SECCION 74 FESTIVAL  */
 
-  .Festival74 {
+.Festival74 {
   display: flex;
   flex-direction: row;
   gap: 40px;
@@ -223,7 +222,10 @@ nav {
   85.71%, 97.14% { left: -600%; }
   100%           { left: 0; }
 }
+
+
 /* SECCION PELICULAS DESTACADAS */
+
 .Destacadas {
   margin: 60px 40px;
 }
@@ -295,6 +297,7 @@ nav {
 
 
 /* SECCION GALA VIDEO */
+
 .Gala {
   margin: 80px 40px 20px 40px;
 }
@@ -339,7 +342,6 @@ nav {
   border: none;
   border-top: 1px solid white;
 }
-
 
 .Cines-lista > li > a {
   display: flex;
@@ -530,7 +532,6 @@ hr {
   width: 100%;
 }
 
-/* Dos columnas */
 .campos {
   display: flex;
   gap: 2rem;
@@ -682,138 +683,129 @@ footer {
 }
 
 
-    
-
-
 /* MEDIA QUERY IPAD */
 
 @media (max-width: 960px) {
 
   /* NAV  */
+  
+  .nav-links {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: calc(100vh - 100px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    transition: 0.5s;
+    left: -100%;
+    z-index: 10;
+  }
 
-
-    .nav-links {
-        position: fixed;
-        top: 100px;
-        width: 100%;
-        height: calc(100vh - 100px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--background-color);
-        transition: 0.5s;
-        left: -100%;
-        z-index: 10;
-    }
-
- /* este selctor esta esperando a que yo con js se lo ponga al ul  */
-    .nav-links.active {
-        left: 0;
+  .nav-links.active {
+    left: 0;
         
 
-    }
+  }
 
-    .nav-links > li {
-        margin: 1.5rem 0;
+  .nav-links > li {
+    margin: 1.5rem 0;
 
-    }
+  }
 
-    .hamb {
-        display: block;
-    }
+  .hamb {
+    display: block;
+  }
 
-        /* VIDEO PORTADA */
+  /* VIDEO PORTADA */
 
-    .video {
-        height: 50vh;
-    }
+  .video {
+    height: 50vh;
+  }
 
-    .video-texto {
-        padding: 24px;
-    }
+  .video-texto {
+    padding: 24px;
+  }
 
-    .video-texto > h1 {
-        font-size: 7vw;
-    }
+  .video-texto > h1 {
+    font-size: 7vw;
+  }
 
-    /* FESTIVAL 74 */
+  /* FESTIVAL 74 */
 
-    .Festival74 {
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 40px;
-    }
+  .Festival74 {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 40px;
+  }
 
-    .Festival74-texto {
-        width: 100%;
-    }
+  .Festival74-texto {
+    width: 100%;
+  }
 
-    .Festival74-texto > h1 {
-        text-align: center;
-    }
+  .Festival74-texto > h1 {
+    text-align: center;
+  }
 
-    .Festival74-carrousel {
-        width: 100%;
-        height: 400px;
-    }
+  .Festival74-carrousel {
+    width: 100%;
+    height: 400px;
+  }
 
-    .Festival74 .Festival74-texto > div > ul {
-      justify-content: center;
-    }
+  .Festival74 .Festival74-texto > div > ul {
+    justify-content: center;
+  }
 
-    /* CINES */
+  /* CINES */
 
-    .Cines-imagen {
-        display: none;
-    }
+  .Cines-imagen {
+    display: none;
+  }
 
-    .Cines-lista {
-        width: 100%;
-    }
+  .Cines-lista {
+    width: 100%;
+  }
 
-    .Cines-titulo {
-        font-size: 6vw;
-        max-width: 70%;
-    }
+  .Cines-titulo {
+    font-size: 6vw;
+    max-width: 70%;
+  }
 
 
   /* ENTRADAS */
 
     .entradas {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        gap: 0;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 0;
     }
 
     .entradas-foto {
-        width: 100%;
-        margin-left: 0;
+      width: 100%;
+      margin-left: 0;
     }
 
     .entradas > .entradas-texto {
-        width: 100%;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+      width: 100%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
 
     .entradas-texto h1 {
-        max-width: 50%;
+      max-width: 50%;
     }
 
     .entradas-texto p {
-        max-width: 80%;
+      max-width: 80%;
     }
 
     
-    /* PELICULAS */
+  /* PELICULAS */
 
-    .gallery__item {
-        width: calc(50% - 1rem);
-    }
-
-
-
-
+  .gallery__item {
+    width: calc(50% - 1rem);
+  }
 
 }
 
@@ -823,142 +815,142 @@ footer {
   /* FESTIVAL 74 */
 
     .Festival74 .Festival74-texto > div > ul {
-        justify-content: center;
-        gap: 30px;
+      justify-content: center;
+      gap: 30px;
     }
 
     .Festival74 .Festival74-texto > div > ul > li > img {
-        width: 22vw;
+      width: 22vw;
     }
 
     /* PELICULAS DESTACADAS */
 
     .Destacadas {
-        margin: 40px 20px;
+      margin: 40px 20px;
     }
 
-     .Destacadas-cabecera {
-        display: flex;
-        gap: 12px;
+    .Destacadas-cabecera {
+      display: flex;
+      gap: 12px;
     }
 
-     .Destacadas-boton {
-        padding: 10px 14px;
-        font-size: 0.8rem;
+    .Destacadas-boton {
+      padding: 10px 14px;
+      font-size: 0.8rem;
     }
 
     .Destacadas-titulo {
-        font-size: 7vw;
+      font-size: 7vw;
     }
 
     .Destacadas-lista {
-        flex-direction: column;
-        gap: 2rem;
+      flex-direction: column;
+      gap: 2rem;
     }
 
     .Destacadas-peli {
-        width: 100%;
+      width: 100%;
     }
   
     /* GALA */
 
     .Gala {
-        margin: 40px 20px;
+      margin: 40px 20px;
     }
 
     .Gala > iframe {
-        aspect-ratio: 4 / 3;
+      aspect-ratio: 4 / 3;
     }
 
     /* PELICULAS */
 
     .section--alt > .container > h2 {
-        font-size: 1rem;
-        padding: 3rem 1.5rem 0 1.5rem;
+      font-size: 1rem;
+      padding: 3rem 1.5rem 0 1.5rem;
     }
 
     .section__title {
-        font-size: 9vw;
-        padding: 1rem 1.5rem 1.5rem;
+      font-size: 9vw;
+      padding: 1rem 1.5rem 1.5rem;
     }
 
     .gallery {
-        padding: 0 1.5rem 3rem;
+      padding: 0 1.5rem 3rem;
     }
 
     .gallery__item {
-        width: 100%;
+      width: 100%;
     }
   
   
   /* ENTRADAS */
 
     .entradas {
-        padding: 0 1.5rem;
+      padding: 0 1.5rem;
     }
 
     .entradas-foto {
-        display: none;
+      display: none;
     }
 
     .entradas > .entradas-texto {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     .entradas-texto h1 {
-        font-size: 9vw;
-        max-width: 100%;
+      font-size: 9vw;
+      max-width: 100%;
     }
 
     .entradas > .entradas-texto > h2 {
-        font-size: 1rem;
+      font-size: 1rem;
     }
 
     .entradas-texto p {
-        max-width: 100%;
-        font-size: 0.9rem;
+      max-width: 100%;
+      font-size: 0.9rem;
     }
 
 
     /* FORMULARIO */
 
     .formulario {
-        padding: 2rem 1.5rem 4rem 1.5rem;
+      padding: 2rem 1.5rem 4rem 1.5rem;
     }
 
     .campos {
-        flex-direction: column;
-        gap: 1rem;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .columna {
-        width: 100%;
+      width: 100%;
     }
 
     .pie p {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
 
     .pie input[type="submit"] {
-        width: 70%;
+      width: 70%;
     }
 
-        /* FOOTER */
+    /* FOOTER */
 
     .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 3.5rem;
-        padding: 3.5rem 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 3.5rem;
+      padding: 3.5rem 1.5rem;
     }
 
     .footer-container h3 {
-        margin-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .footer-container > div > div > p {
-        margin-bottom: 1.2rem;
+      margin-bottom: 1.2rem;
     }
 }
