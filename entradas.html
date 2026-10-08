@@ -60,50 +60,87 @@
       </section>
       <section class="formulario">
         <form onsubmit="return comprar()">
+
+          <div class="contenido">
+            <div class="tarjetas">
+
+              <article class="tarjeta" id="tarjeta-e1">
+                <div class="tarjeta__info">
+                  <h3>Entrada General</h3>
+                  <p>Acceso a las proyecciones del festival.</p>
+                  <span class="tarjeta__precio">80 €</span>
+                </div>
+                <div class="contador">
+                  <button type="button" id="menos-e1" onclick="cambiar('e1', -1)" aria-label="Quitar entrada general">−</button>
+                  <span id="cant-e1">0</span>
+                  <button type="button" id="mas-e1" onclick="cambiar('e1', 1)" aria-label="Añadir entrada general">+</button>
+                </div>
+             </article>
+
+              <article class="tarjeta" id="tarjeta-e2">
+                <div class="tarjeta__info">
+                  <h3>VIP</h3>
+                  <p>Acceso prioritario y zonas exclusivas.</p>
+                  <span class="tarjeta__precio">180 €</span>
+                </div>
+                <div class="contador">
+                  <button type="button" id="menos-e2" onclick="cambiar('e2', -1)" aria-label="Quitar VIP">−</button>
+                  <span id="cant-e2">0</span>
+                  <button type="button" id="mas-e2" onclick="cambiar('e2', 1)" aria-label="Añadir VIP">+</button>
+                </div>
+              </article>
+
+              <article class="tarjeta" id="tarjeta-e3">
+                <div class="tarjeta__info">
+                  <h3>Abono Festival</h3>
+                  <p>Todos los días del festival.</p>
+                  <span class="tarjeta__precio">120 €</span>
+                </div>
+                <div class="contador">
+                  <button type="button" id="menos-e3" onclick="cambiar('e3', -1)" aria-label="Quitar abono">−</button>
+                  <span id="cant-e3">0</span>
+                  <button type="button" id="mas-e3" onclick="cambiar('e3', 1)" aria-label="Añadir abono">+</button>
+                </div>
+              </article>
+
+            </div>
+
+            <aside class="resumen">
+              <h2>Resumen</h2>
+              <ul id="resumen-lista"></ul>
+              <p class="resumen__total">Coste total: <span id="coste">0 €</span></p>
+              <input type="submit" id="boton-comprar" value="Comprar entradas" disabled>
+            </aside>
+          </div>
+
           <div class="campos">
-            <!-- Columna izquierda -->
             <div class="columna">
               <label for="nombre">Nombre:</label>
               <input type="text" id="nombre" placeholder="Nombre" required>
-
+            </div>
+            <div class="columna">
               <label for="correo">Correo electrónico:</label>
               <input type="email" id="correo" placeholder="Correo electrónico" required>
             </div>
-
-            <!-- Columna derecha -->
-            <div class="columna">
-              <label for="exposicion">Exposición:</label>
-              <select id="exposicion" onchange="costeTotal()">
-                <option value="e1">Entrada General - 80 €</option>
-                <option value="e2">VIP - 180 €</option>
-                <option value="e3">Abono festival - 120 €</option>
-              </select>
-
-              <label for="numero">Número de entradas:</label>
-              <input type="number" id="numero" min="1" max="10" placeholder="Número de entradas" required onchange="costeTotal()">
-            </div>
           </div>
 
-            <!-- Parte inferior, centrada -->
-            <div class="pie">
-              <p>Coste total: <span id="coste"></span></p>
-              <input type="submit" value="Comprar entradas">
-            </div>
         </form>
+
         <div id="modal">
-            <div>
-                <h2>LA COMPRA SE HA REALIZADO CORRECTAMENTE</h2>
-                <ul>
-                    <li>Nombre: <span id="nom"></span></li>
-                    <li>Correo electrónico: <span id="corr"></span></li>
-                    <li>Tipo de entrada: <span id="ex"></span></li>
-                    <li>Número de entradas: <span id="num"></span></li>
-                    <li>Coste total: <span id="ct"></span></li>
-                </ul>
-                <button onclick="cerrarVentana()">Aceptar</button>
-            </div>
+          <div>
+            <h2>LA COMPRA SE HA REALIZADO CORRECTAMENTE</h2>
+            <ul>
+              <li>Nombre: <span id="nom"></span></li>
+              <li>Correo electrónico: <span id="corr"></span></li>
+              <li>Tipo de entrada: <span id="ex"></span></li>
+              <li>Número de entradas: <span id="num"></span></li>
+              <li>Coste total: <span id="ct"></span></li>
+            </ul>
+            <button onclick="cerrarVentana()">Aceptar</button>
+          </div>
         </div>
       </section>
+
       <footer>
         <div class="footer-container">
           <div class="terms">

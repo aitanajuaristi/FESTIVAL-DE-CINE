@@ -25,51 +25,98 @@ enlaces.forEach((enlace) => {
 
 
 
-// Formulario 
-
+/// Datos de las entradas
+var entradas = [
+  { id: 'e1', nombre: 'Entrada General', precio: 80 },
+  { id: 'e2', nombre: 'VIP', precio: 180 },
+  { id: 'e3', nombre: 'Abono Festival', precio: 120 }
+];
+ 
+var MAXIMO_POR_TIPO = 10;
+ 
+// Cantidad elegida de cada tipo
+var cantidades = { e1: 0, e2: 0, e3: 0 };
+ 
+// Suma o resta una entrada (lo llaman los botones + y −)
+function cambiar(id, cambio) {
+  var nueva = cantidades[id] + cambio;
+  if (nueva >= 0 && nueva <= MAXIMO_POR_TIPO) {
+    cantidades[id] = nueva;
+    costeTotal();
+  }
+}
+ 
+// Recalcula cantidades, resumen y coste total
 function costeTotal() {
-    console.log("-----------función costeTotal");
-    let numeroEntradas = document.getElementById("numero").value;
-    console.log("num entradas = " + numeroEntradas);
-    let costePorEntrada = 0;
-    let valorExposicion = document.getElementById("exposicion").value;
-    if (valorExposicion === "e1") {
-        costePorEntrada = 80;
-    } else if (valorExposicion === "e2") {
-        costePorEntrada = 180;
+  var total = 0;
+  var numero = 0;
+  var lineas = '';
+ 
+  for (var i = 0; i < entradas.length; i++) {
+    var e = entradas[i];
+    var cantidad = cantidades[e.id];
+ 
+    document.getElementById('cant-' + e.id).textContent = cantidad;
+    document.getElementById('menos-' + e.id).disabled = (cantidad === 0);
+    document.getElementById('mas-' + e.id).disabled = (cantidad === MAXIMO_POR_TIPO);
+ 
+    var tarjeta = document.getElementById('tarjeta-' + e.id);
+    if (cantidad > 0) {
+      tarjeta.classList.add('seleccionada');
+      lineas += '<li><span>' + cantidad + ' × ' + e.nombre + '</span><strong>' + (cantidad * e.precio) + ' €</strong></li>';
     } else {
-        costePorEntrada = 120;
+      tarjeta.classList.remove('seleccionada');
     }
-    console.log("coste por entrada = " + costePorEntrada);
-    let costeEntradas = (numeroEntradas * costePorEntrada) + " €";
-    console.log("coste = " + costeEntradas);
-    document.getElementById("coste").innerHTML = costeEntradas;
+ 
+    numero += cantidad;
+    total += cantidad * e.precio;
+  }
+ 
+  if (lineas === '') {
+    lineas = '<li class="vacio">Todavía no has elegido ninguna entrada.</li>';
+  }
+ 
+  document.getElementById('resumen-lista').innerHTML = lineas;
+  document.getElementById('coste').textContent = total + ' €';
+ 
+  // Solo se puede comprar si hay al menos una entrada
+  document.getElementById('boton-comprar').disabled = (numero === 0);
 }
-
+ 
+// Al enviar el formulario: rellena y abre el modal
 function comprar() {
-    console.log("-----------función comprar");
-    document.getElementById("nom").innerHTML = document.getElementById("nombre").value;
-    document.getElementById("corr").innerHTML = document.getElementById("correo").value;
-    document.getElementById("num").innerHTML = document.getElementById("numero").value;
-    document.getElementById("ct").innerHTML = document.getElementById("coste").innerHTML;
-
-   
-    let valorExposicion = document.getElementById("exposicion").value;
-    let nombreExposicion = "";
-    if (valorExposicion === "e1") {
-        nombreExposicion = "Entrada General - 80 €";
-    } else if (valorExposicion === "e2") {
-        nombreExposicion = " VIP - 180 €";
-    } else {
-        nombreExposicion = "Abono festival - 120 €";
+  var tipos = '';
+  var numero = 0;
+ 
+  for (var i = 0; i < entradas.length; i++) {
+    var cantidad = cantidades[entradas[i].id];
+    if (cantidad > 0) {
+      if (tipos !== '') {
+        tipos += ', ';
+      }
+      tipos += cantidad + ' × ' + entradas[i].nombre;
+      numero += cantidad;
     }
-    document.getElementById("ex").innerHTML = nombreExposicion;
-
-    document.getElementById("modal").style.display = "flex";
-    return false;
+  }
+ 
+  document.getElementById('nom').textContent = document.getElementById('nombre').value;
+  document.getElementById('corr').textContent = document.getElementById('correo').value;
+  document.getElementById('ex').textContent = tipos;
+  document.getElementById('num').textContent = numero;
+  document.getElementById('ct').textContent = document.getElementById('coste').textContent;
+ 
+  document.getElementById('modal').style.display = 'flex';
+  return false; // no recargar la página
 }
-
+ 
+// Cierra el modal y deja el formulario a cero
 function cerrarVentana() {
-    console.log("-----------función cerrarVentana");
-    document.getElementById("modal").style.display = "none";
+  document.getElementById('modal').style.display = 'none';
+  document.getElementById('nombre').value = '';
+  document.getElementById('correo').value = '';
+  cantidades = { e1: 0, e2: 0, e3: 0 };
+  costeTotal();
 }
+ 
+// Estado inicial
+costeTotal();
